@@ -8,88 +8,11 @@ https://mapicons.mapsmarker.com/category/markers/nature/?style=simple
 
 <html>
 
-<head>
-
-<title>Leaflet Web Map by Jerry</title>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style>
-    html, body{
-        width: 100%;
-        height: 100%;
-    }
-    #map{
-        width: 100%;
-        height: 100%;
-    }
-</style>
-</head>
-
-
-<body>
-<div id="map"></div>
-<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" ></script>
-<script>
-    var map;
-	var names=['中國宿柱薹', 	
-	           '扇葉鐵線蕨', 	
-	           '姑婆芋', 		
-	           '無患子', 		
-	           '珍珠蓮',
-			   '三白草',
-			   '異葉南洋杉'];
-	var images=['images\\original1.jpg',
-				'images\\original2.jpg',
-				'images\\original3.jpg',
-				'images\\original4.jpg',
-				'images\\original5.jpg',
-				'images\\original6.jpg',
-				'images\\original7.jpg'];
-				
-	var longtitude=[25.016277, 
-					25.016247,
-					25.016278,
-					25.014999,
-					25.015833,
-//					25.015951,
-					25.015157,
-					25.015158];
-	var latitude=[121.55704,
-	              121.557171,
-	              121.557193,
-	              121.557503,
-	              121.558609,
-//				  121.557607,
-				  121.557480,
-				  121.557551];
-    
-    map = L.map('map').setView([longtitude[0], latitude[0]], 19);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	attribution: '<a href="https://www.openstreetmap.org/">OSM</a>',
-	maxZoom: 19,}).addTo(map);
-  
-    var treeIcon = L.icon({
-        iconUrl: 'tree.png',
-        shadowUrl: 'tree.png',
-
-        iconSize:     [32, 30], // size of the icon
-        shadowSize:   [0, 0], // size of the shadow
-        iconAnchor:   [16, 20], // point of the icon which will correspond to marker's location
-        shadowAnchor: [0, 0],  // the same for the shadow
-        popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
-    });    
-  
-
-	for(let i = 0; i < names.length; i++) {
-		var marker=L.marker([longtitude[i], latitude[i]], {icon: treeIcon}).addTo(map);
-		var customPopup="<img src="+images[i]+" alt='tree gif' style='max-width:300px' /><br/>"+names[i];
-		console.log(customPopup);
-		
-		marker.bindPopup(customPopup);
-	}
-   
-</script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>你好，GitHub</title>
+  </head>
+  <body>
+    <h1>覺得厲害</h1>
+  </body>
 </html>
