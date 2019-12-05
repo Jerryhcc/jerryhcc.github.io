@@ -1,0 +1,75 @@
+<!-- Currently the maximum zoomlevel seems to be 22 
+
+marker 
+https://mapicons.mapsmarker.com/category/markers/nature/?style=simple
+
+-->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Leaflet Web Map by Jerry</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+<style>
+    html, body{
+        width: 100%;
+        height: 100%;
+    }
+    #map{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+
+
+<body>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" ></script>
+<script>
+    var map;
+    
+    map = L.map('map').setView([25.01527777777778, 121.55722222222222], 19);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '<a href="https://www.openstreetmap.org/">OSM</a>',
+	maxZoom: 19,}).addTo(map);
+  
+    var treeIcon = L.icon({
+        iconUrl: 'tree.png',
+        shadowUrl: 'tree.png',
+
+        iconSize:     [32, 30], // size of the icon
+        shadowSize:   [0, 0], // size of the shadow
+        iconAnchor:   [16, 20], // point of the icon which will correspond to marker's location
+        shadowAnchor: [0, 0],  // the same for the shadow
+        popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
+    });    
+     
+   var marker = L.marker([25.01527777777778, 121.55722222222222], {icon: treeIcon}).addTo(map);
+//    var marker = L.marker([25.016704, 121.557550], {icon: treeIcon}).addTo(map).bindPopup(("&lt;img alt="" src="tree.png"/&gt;&lt;b&gt;HI!!&lt;/b&gt; This is me!");
+    
+    var customPopup = "<img src='images//2 .JPG' alt='tree gif' style='max-width:300px' /><br/>This is a mob";
+
+    // specify popup options 
+    //var customOptions =
+    //    {
+    //    'maxWidth': '200',
+    //    'className' : 'custom'
+    //    } 
+        
+    marker.bindPopup(customPopup);
+//    marker.bindPopup("<b>Hello world!</b><br>I am a popup.");
+//    marker.addTo(map);
+
+//    $.getJSON('https://1999.noob.tw/data/kaohsiung.json', 
+//        function(r){
+//            L.geoJSON(r, {color: '#333', weight: 0.7}).addTo(map);
+//        }
+//        )
+</script>
+</body>
+</html>
